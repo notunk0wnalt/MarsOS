@@ -6,7 +6,7 @@ class Compositor {
             {
                 name: 'defaultimage',
                 type: 'image',
-                source: './../public/assets/images/untitled.png',
+                source: './../public/assets/images/Untitled.png',
                 element: null,
                 layer: 0
             }
