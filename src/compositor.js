@@ -6,28 +6,29 @@ class Compositor {
             {
                 name: 'defaultimage',
                 type: 'image',
-                source: './../public/assets/images/Untitled.png',
+                source: '/public/assets/images/Untitled.png',
                 element: null,
-                layer: 0
+                layer: 1
             }
         ]
     }
 
     render() {
-        for (const obj in this.renderStack){
-            switch(obj.type) {
+        for (let object in this.renderStack){
+            console.log(object)
+            switch(object.type) {
                 case 'image':
-                    if (obj.element == null) {
+                    if (object.element == null) {
                         let newimg = document.createElement('img');
-                        newImage.src = obj.source;
-                        newImage.style.zIndex = obj.layer;
+                        newImage.src = object.source;
+                       // newImage.style.zIndex = object.layer;
 
-                        obj.element = newImg;
+                        object.element = newImg;
                         document.getElementById('compositor-root').append(newImage);
                     } else {
-                        let objElement = obj.element
-                        objElement.zIndex = obj.name;
-                        objElement.src = obj.src
+                        let objElement = object.element
+                        //objElement.zIndex = object.name;
+                        //objElement.src = object.src
                     }
                     break;
             }
